@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <aside class="hero">
+    <h1 class="brand">AVC<small>Agencia de seguros</small></h1>
+    <div class="msg">
+      <p class="lema">Tu cartera de asegurados, siempre al día.</p>
+      <ul class="feats">
+        <li>Renovaciones que no se te pasan</li>
+        <li>Cobranza clara, cliente por cliente</li>
+        <li>Cotizaciones con seguimiento</li>
+      </ul>
+    </div>
+    <p class="pie">Acceso privado para el agente</p>
+  </aside>
+
+  <main>
+    <form id="login" class="box" novalidate onsubmit="return false">
+      <h2 id="titulo">Iniciar sesión</h2>
+      <p class="intro" id="intro">Entra con tu correo y contraseña.</p>
+
+      <div id="rowTop" class="dos" hidden>
+        <div><label for="nombre">Nombre</label><input id="nombre" type="text" autocomplete="given-name"></div>
+        <div><label for="apellido">Apellido</label><input id="apellido" type="text" autocomplete="family-name"></div>
+      </div>
+
+      <label for="email">Correo</label>
+      <input id="email" type="email" autocomplete="username" placeholder="tucorreo@ejemplo.com" required>
+
+      <div id="rowTel" hidden>
+        <label for="tel">Número de teléfono</label>
+        <input id="tel" type="tel" autocomplete="tel" placeholder="10 dígitos">
+      </div>
+
+      <label for="pass">Contraseña</label>
+      <div class="pw">
+        <input id="pass" type="password" autocomplete="current-password" required>
+        <button id="show" type="button" class="link">Mostrar</button>
+      </div>
+
+      <div id="row2" hidden>
+        <label for="pass2">Repite la contraseña</label>
+        <input id="pass2" type="password" autocomplete="new-password">
+      </div>
+
+      <p id="msg" role="alert"></p>
+      <button id="go" type="submit" class="primary">Entrar</button>
+      <button id="forgot" type="button" class="link center">Olvidé mi contraseña</button>
+
+      <p class="alt"><span id="alt-text">¿Aún no tienes cuenta?</span> <button id="toggle" type="button" class="link">Crear cuenta</button></p>
+    </form>
+  </main>
+
+  <script>
+    if (location.protocol === 'file:') {
+      document.addEventListener('DOMContentLoaded', function () {
+        var m = document.getElementById('msg');
+        m.textContent = 'Abriste el archivo directamente. Ábrelo con Live Server: la dirección debe empezar con http://';
+        m.className = 'err';
+      });
+    }
+  </script>
+  <script type="module" src="login.js"></script>
+</body>
+</html>

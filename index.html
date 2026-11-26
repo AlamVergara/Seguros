@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cartera de asegurados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cargando">
+  <aside class="side">
+    <h1 class="brand">AVC<small>Agencia de seguros</small></h1>
+    <nav id="nav" aria-label="Secciones"></nav>
+    <div class="util">
+      <p id="who" class="who"></p>
+      <button id="export" type="button">Descargar respaldo</button>
+      <button id="reset" type="button">Vaciar datos</button>
+      <button id="logout" type="button">Cerrar sesión</button>
+    </div>
+  </aside>
+
+  <main>
+    <header class="top">
+      <div><h2 id="title"></h2><p id="sub" class="sub"></p></div>
+      <div class="tools">
+        <input id="q" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button id="add" type="button" class="primary"></button>
+      </div>
+    </header>
+    <section id="view"></section>
+  </main>
+
+  <dialog id="dlg"><form method="dialog" id="form"></form></dialog>
+  <script type="module" src="guard.js"></script>
+</body>
+</html>
